@@ -1,0 +1,20 @@
+---
+- name: Install zsh
+  become: true
+  package: 
+    state: present
+    name: zsh 
+
+- name: Set shell to zsh
+  become: true
+  user: 
+    name: "{{ item }}"
+    shell: /bin/zsh
+  with_items:
+    - root
+    - "{{ user }}"
+
+- name: Install oh-my-zsh
+  git: 
+    repo: https://github.com/robbyrussell/oh-my-zsh.git 
+    dest: "{{ home_path }}/.oh-my-zsh"

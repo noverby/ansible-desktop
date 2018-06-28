@@ -1,0 +1,11 @@
+---
+  - name: Install base packages
+    become: yes
+    package: 
+      state: present
+      name:
+        - python2-libselinux
+        - tmux
+        - git
+        - fortune-mod
+

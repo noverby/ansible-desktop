@@ -1,0 +1,54 @@
+---
+sync_dir: Sync
+
+desktop_dir: Desktop
+videos_dir: Videos
+music_dir: Music
+templates_dir: Templates
+
+documents_dir: Documents
+wiki_dir: Wiki
+
+pictures_dir: Pictures
+wallpaper_dir: Wallpaper
+profile_dir: Profile
+screenshots_dir: Screenshots
+
+downloads_dir: Downloads
+torrent_dir: Torrent
+browser_dir: Browser
+
+link_dirs:
+  - "{{ desktop_dir }}"
+  - "{{ documents_dir }}"
+  - "{{ videos_dir }}"
+  - "{{ music_dir }}"
+  - "{{ templates_dir }}"
+  - "{{ pictures_dir }}"
+
+mail_dir: Mail
+apps_dir: Apps
+proj_dir: Projects
+
+settings_dir: Settings
+settings_dot_dir: Dot
+settings_config_dir: Config
+settings_local_bin_dir: LocalBin
+
+work_dir: Work
+work_git_dir: git
+work_tmp_dir: tmp
+work_rpm_dir: rpm
+work_flatpak_dir: flatpak
+work_proj_dir: proj
+work_wiki_dir: wiki
+
+home_page: http://prozum.dk
+wallpaper: current.jpg
+profile: current.jpg
+gnome_extensions:
+  - 15
+  - 307
+  - 442
+  - 517
+  - 723

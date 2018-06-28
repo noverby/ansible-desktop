@@ -1,0 +1,16 @@
+---
+  - name: Install neovim
+    become: true
+    package: 
+      state: present
+      name:
+      - neovim
+      - sqlite
+  - name: Fetch SpaceVim script
+    get_url:
+      url: https://spacevim.org/install.sh
+      dest: "{{ work_tmp_path }}/spacevim.sh"
+  - name: Run SpaceVim script
+    script: "{{ work_tmp_path }}/spacevim.sh"
+    args:
+      creates: "{{ home_path }}/.SpaceVim"
