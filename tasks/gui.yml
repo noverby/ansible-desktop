@@ -35,3 +35,18 @@
       state: link
       src: "{{ mail_path }}"
       dest: "{{ evo_mail_path }}"
+  #- name: Set static gsettings
+  #  shell: "dbus-launch gsettings set {{ item.schema }} {{ item.key }} {{ item.value }}"
+  #  with_items: "{{ static_gsettings }}"
+  - name: Set static gsettings
+    dconf: 
+      key: "/{{ item.schema | replace('.','/') }}/{{ item.key }}"
+      value: "{{ item.value }}"
+      state: present
+    with_items: "{{ static_gsettings }}"
+  - name: Set dynamic gsettings
+    dconf: 
+      key: "/{{ item.schema | replace('.','/') }}/{{ item.key }}"
+      value: "{{ item.value }}"
+      state: present
+    with_items: "{{ dynamic_gsettings }}"

@@ -23,6 +23,8 @@
       downloads_path: "{{ home_path }}/{{ downloads_dir }}"
       apps_path: "{{ home_path }}/{{ apps_dir }}"
       proj_path: "{{ sync_path }}/{{ proj_dir }}"
+      wallpapers_path: "{{ home_path }}/{{ pictures_dir }}/{{ wallpapers_dir }}"
+      screenshots_path: "{{ home_path }}/{{ pictures_dir }}/{{ screenshots_dir }}"
   - name: Set os paths
     set_fact:
       config_path: "{{ home_path }}/.config"
@@ -53,3 +55,15 @@
       work_flatpak_path: "{{ work_path }}/{{ work_flatpak_dir }}"
       work_proj_path: "{{ work_path }}/{{ work_proj_dir }}"
       work_wiki_path: "{{ work_path }}/{{ work_wiki_dir }}"
+  - name: Set dynamic gsettings    
+    set_fact:
+      dynamic_gsettings:
+      - schema: org.gnome.desktop.background
+        key: picture-uri 
+        value: "'{{ wallpapers_path }}/{{ background }}'"
+      - schema: org.gnome.desktop.screensaver
+        key: picture-uri 
+        value: "'{{ wallpapers_path }}/{{ screensaver }}'"
+      - schema: org.gnome.gnome-screenshot
+        key: auto-save-directory
+        value: "'{{ screenshots_path }}'"
