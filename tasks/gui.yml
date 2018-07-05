@@ -29,15 +29,12 @@
     lineinfile:
       path: "{{ accountsservice_user_path }}"
       regexp: "^Icon="
-      line: "Icon={{ home_path }}/{{ pictures_dir }}/{{ profile_dir}}/{{ profile }}"
+      line: "Icon={{ home_path }}/{{ pictures_dir }}/{{ profile_dir }}/{{ profile }}"
   - name: Link evolution mail
     file:
       state: link
       src: "{{ mail_path }}"
       dest: "{{ evo_mail_path }}"
-  #- name: Set static gsettings
-  #  shell: "dbus-launch gsettings set {{ item.schema }} {{ item.key }} {{ item.value }}"
-  #  with_items: "{{ static_gsettings }}"
   - name: Set static gsettings
     dconf: 
       key: "/{{ item.schema | replace('.','/') }}/{{ item.key }}"
