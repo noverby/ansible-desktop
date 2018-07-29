@@ -47,6 +47,10 @@
       settings_dot_path: "{{ settings_path }}/{{ settings_dot_dir }}"
       settings_config_path: "{{ settings_path }}/{{ settings_config_dir }}"
       settings_local_bin_path: "{{ settings_path }}/{{ settings_local_bin_dir }}"
+  - name: Set dot paths
+    set_fact:
+      settings_ssh_path: "{{ settings_dot_path }}/ssh"
+      settings_gnupg_path: "{{ settings_dot_path }}/gnupg"
   - name: Set workspace paths
     set_fact:
       work_git_path: "{{ work_path }}/{{ work_git_dir }}"

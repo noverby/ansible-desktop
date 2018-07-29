@@ -1,10 +1,21 @@
 ---
+  - name: Add groups
+    become: yes
+    group:
+      name: docker
+      state: present
+  - name: Add user to groups
+    become: yes
+    user:
+      name: "{{ user }}"
+      group: docker
   - name: Install base packages
     become: yes
     package: 
       state: present
       name:
-        - python2-libselinux
+      # - python2-libselinux
+        - python-psutil
         - tmux
         - git
         - fortune-mod

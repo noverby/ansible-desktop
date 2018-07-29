@@ -7,19 +7,38 @@
       - "{{ apps_path }}"
       - "{{ browser_path }}"
       - "{{ torrent_path }}"
+  - name: Delete link dirs
+    file:
+      state: absent
+      dest: "{{ home_path }}/{{ item }}"
+    with_items: "{{ link_dirs }}"
   - name: Link dirs
     file:
       state: link
       src: "{{ sync_path }}/{{ item }}"
       dest: "{{ home_path }}/{{ item }}"
     with_items: "{{ link_dirs }}"
+  - name: Delete dotfiles dirs
+    file:
+      state: absent
+      dest: "{{ home_path }}/.{{ item | basename }}"
+    with_lines:
+      - "find {{ settings_dot_path }} -mindepth 1 -maxdepth 1"
   - name: Link dotfiles
     file:
       state: link
+      force: yes
       src: "{{ item }}"
       dest: "{{ home_path }}/.{{ item | basename }}"
     with_lines:
       - "find {{ settings_dot_path }} -mindepth 1 -maxdepth 1"
+  - name: Delete link config
+    file:
+      state: absent
+      force: yes
+      dest: "{{ config_path }}/{{ item | basename }}"
+    with_lines:
+      - "find {{ settings_config_path }} -mindepth 1 -maxdepth 1"
   - name: Link config 
     file:
       state: link

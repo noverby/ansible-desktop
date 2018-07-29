@@ -2,8 +2,9 @@
   - name: Change ssh dir permission
     file:
       state: directory
-      path: "{{ ssh_path }}"
+      path: "{{ settings_ssh_path }}"
       mode: 0700
+      force: yes
   - name: Change shared permission
     file:
       path: "{{ ssh_path }}/{{ item }}"
@@ -19,5 +20,5 @@
   - name: Change gnupg dir permission
     file:
       state: directory
-      path: "{{ home_path }}/.gnupg"
+      path: "{{ settings_gnupg_path }}"
       mode: 0700

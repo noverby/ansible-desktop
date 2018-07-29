@@ -4,7 +4,7 @@
     package:
       state: present
       name:
-        - julia
+      # - julia
         - clang
         - meson
         - cmake

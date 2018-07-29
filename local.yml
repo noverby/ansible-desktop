@@ -5,9 +5,9 @@
   - include: tasks/facts.yml
   - include: tasks/base.yml
   - include: tasks/dirs.yml
+  - include: tasks/work.yml
   - include: tasks/zsh.yml
   - include: tasks/neovim.yml
   - include: tasks/crypt.yml
   - include: tasks/dev.yml
-  - include: tasks/work.yml
   - include: tasks/gui.yml

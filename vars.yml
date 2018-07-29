@@ -64,6 +64,9 @@ static_gsettings:
     key: natural-scroll 
     value: "true"
   - schema: org.gnome.desktop.peripherals.touchpad
+    key: natural-scroll
+    value: "true"
+  - schema: org.gnome.desktop.peripherals.touchpad
     key: tap-to-click
     value: "true"
   - schema: org.gnome.desktop.calendar
@@ -72,6 +75,12 @@ static_gsettings:
   - schema: org.gnome.desktop.interface 
     key: clock-show-date 
     value: "true"
+  - schema: org.gnome.settings-daemon.plugins.color
+    key: night-light-enabled
+    value: "true"
+  - schema: org.gnome.desktop.wm.preferences
+    key: button-layout
+    value: "':close'"
   - schema: org.gnome.desktop.input-sources
     key: xkb-options
     value: "['caps:swapescape']"
