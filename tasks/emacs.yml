@@ -1,0 +1,6 @@
+---
+  - name: Install spacemacs
+    git:
+      repo: "https://github.com/syl20bnr/spacemacs"
+      dest: "{{ home_path }}/.emacs.d"
+      version: develop

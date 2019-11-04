@@ -53,6 +53,11 @@ gnome_extensions:
   - 442 # drop-down-terminal
   - 517 # caffeine
   - 723 # Pixel Saver
+flatpak_apps:
+  - me.kozec.syncthingtk
+  - org.gnu.emacs
+  - com.spotify.Client
+  - org.gnome.Fractal
 static_gsettings:
   - schema: org.gnome.desktop.interface
     key: gtk-theme 
@@ -81,6 +86,3 @@ static_gsettings:
   - schema: org.gnome.desktop.wm.preferences
     key: button-layout
     value: "':close'"
-  - schema: org.gnome.desktop.input-sources
-    key: xkb-options
-    value: "['caps:swapescape']"
