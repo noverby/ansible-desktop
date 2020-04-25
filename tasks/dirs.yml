@@ -30,14 +30,8 @@
       dest: "{{ config_path }}/{{ item | basename }}"
     with_lines:
       - "find {{ settings_config_path }} -mindepth 1 -maxdepth 1"
-  - name: Link local bin
-    file:
-      state: link
-      force: yes
-      src: "{{ settings_local_bin_path }}"
-      dest: "{{ local_bin_path }}"
-  - name: Make local bin executable
+  - name: Make scripts executable
     file:
       dest: "{{ item }}"
       mode: a+x
-    with_fileglob: "{{ settings_local_bin_path }}/*"
+    with_fileglob: "{{ work_script_path }}/*"

@@ -33,14 +33,12 @@ proj_dir: Projects
 settings_dir: Settings
 settings_dot_dir: Dot
 settings_config_dir: Config
-settings_local_bin_dir: LocalBin
 
 work_dir: Work
 work_git_dir: git
 work_tmp_dir: tmp
-work_rpm_dir: rpm
-work_flatpak_dir: flatpak
 work_proj_dir: proj
+work_script_dir: script
 work_wiki_dir: wiki
 
 home_page: http://prozum.dk
@@ -49,22 +47,18 @@ screensaver: current.jpg
 profile: current.jpg
 gnome_extensions:
   - 15  # alternatetab
-  - 307 # Dash to Dock
-  - 442 # drop-down-terminal
   - 517 # caffeine
   - 723 # Pixel Saver
-flatpak_apps:
-  - me.kozec.syncthingtk
+snap_apps:
   - org.gnu.emacs
   - com.spotify.Client
-  - org.gnome.Fractal
 static_gsettings:
   - schema: org.gnome.desktop.interface
     key: gtk-theme 
-    value: "'Adwaita-dark'"
+    value: "'Yaru-dark'"
   - schema: org.gnome.desktop.interface
     key: icon-theme
-    value: "'Pop'"
+    value: "'Yaru'"
   - schema: org.gnome.desktop.peripherals.mouse
     key: natural-scroll 
     value: "true"

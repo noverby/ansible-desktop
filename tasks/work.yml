@@ -6,8 +6,6 @@
     with_items:
       - "{{ work_git_path }}"
       - "{{ work_tmp_path }}"
-      - "{{ work_rpm_path }}"
-      - "{{ work_flatpak_path }}"
   - name: Link project dir
     file:
       state: link

@@ -17,5 +17,5 @@
       state: present
     with_items: "{{ dynamic_gsettings }}"
   - name: Set gnome-shell extensions
-    script: "{{ local_bin_path }}/gnome-shell-extension-installer --yes {{ item }}"
+    script: "{{ work_script_path }}/gnome-shell-extension-installer --yes {{ item }}"
     with_items: "{{ gnome_extensions }}"

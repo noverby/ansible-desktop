@@ -30,7 +30,6 @@
       config_path: "{{ home_path }}/.config"
       ssh_path: "{{ home_path }}/.ssh"
       gnupg_path: "{{ home_path }}/.gnupg"
-      local_bin_path: "{{ home_path }}/.local/bin"
       ext_path: "{{ home_path }}/.local/share/gnome-shell/extensions"
       evo_mail_path: "{{ home_path }}/.local/share/evolution/mail/local"
       accountsservice_user_path: "/var/lib/AccountsService/users/{{ user }}"
@@ -46,7 +45,6 @@
     set_fact:
       settings_dot_path: "{{ settings_path }}/{{ settings_dot_dir }}"
       settings_config_path: "{{ settings_path }}/{{ settings_config_dir }}"
-      settings_local_bin_path: "{{ settings_path }}/{{ settings_local_bin_dir }}"
   - name: Set dot paths
     set_fact:
       settings_ssh_path: "{{ settings_dot_path }}/ssh"
@@ -55,10 +53,9 @@
     set_fact:
       work_git_path: "{{ work_path }}/{{ work_git_dir }}"
       work_tmp_path: "{{ work_path }}/{{ work_tmp_dir }}"
-      work_rpm_path: "{{ work_path }}/{{ work_rpm_dir }}"
-      work_flatpak_path: "{{ work_path }}/{{ work_flatpak_dir }}"
-      work_proj_path: "{{ work_path }}/{{ work_proj_dir }}"
       work_wiki_path: "{{ work_path }}/{{ work_wiki_dir }}"
+      work_proj_path: "{{ work_path }}/{{ work_proj_dir }}"
+      work_script_path: "{{ work_path }}/{{ work_proj_dir }}/{{ work_script_dir }}"
   - name: Set dynamic gsettings    
     set_fact:
       dynamic_gsettings:
