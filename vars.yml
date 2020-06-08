@@ -49,8 +49,9 @@ gnome_extensions:
   - 15  # alternatetab
   - 517 # caffeine
   - 723 # Pixel Saver
+  - 1411 # quake-mode
+  - 2639 # Hide minimized
 snap_apps:
-  - org.gnu.emacs
   - com.spotify.Client
 static_gsettings:
   - schema: org.gnome.desktop.interface
