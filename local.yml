@@ -6,10 +6,6 @@
       prompt: "What is your syncthing password?"
   tasks:
   - include: tasks/facts.yml
-  - include: tasks/flatpak.yml
-  - include: tasks/sync.yml
   - include: tasks/dirs.yml
   - include: tasks/work.yml
-  - include: tasks/emacs.yml
-  - include: tasks/gui.yml
   - include: tasks/crypt.yml

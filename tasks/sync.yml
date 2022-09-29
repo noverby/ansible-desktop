@@ -1,3 +1,0 @@
----
-- name: Setup syncthing
-  command: echo {{ syncthing_password }}
